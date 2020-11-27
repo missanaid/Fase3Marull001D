@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>Lista de Anime</h1>
+
+{% if anime_list %}
+
+<ul>
+  {% for anime in anime_list %}
+  <li>
+    <a href="{{ anime.get_absolute_url }}"> {{ anime.nombre_anime }} </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p>No se ha agregado ningún Anime</p>
+
+{% endif %} {% endblock %}

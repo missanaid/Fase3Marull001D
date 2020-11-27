@@ -1,0 +1,69 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Custom fonts for this theme -->
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" {% static 'css/estilos.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/galeria.css' %}" />
+  </head>
+
+  <!-- Theme CSS -->
+
+  <body>
+    <div class="container-bg">
+      <div class="container bg-white">
+        <h1>Galería de Anime uwu</h1>
+
+        {% if request.user.is_authenticated %}
+        <div style="width: 92%; height: 50px">
+          <a
+            class="btn btn-anime"
+            href="{% url 'galeria_create' %}"
+            style="float: right; font-size: 14px"
+            >Agregar Imagen</a
+          >
+        </div>
+        {% endif %}
+
+
+        <div class="row pt-4 galeria-estilo">
+          {% for galeria in num_fotos %}
+          <div class="col-md-4 col-6 thumb">
+            <a
+              href="{{ galeria.imagen.url}}"
+              class="fancybox fancybox-container"
+              rel="ligthbox"
+            >
+              <img
+                src="{{ galeria.imagen.url}}"
+                class="zoom img-fluid"
+                alt="{{ galeria.nombre_anime }}"
+              />
+            </a>
+            <a href="{% url 'galeria-detail' galeria.pk %}">
+              <p class="card-title estilo pt-3 pl-2">
+                {{ galeria.nombre_anime }} - {{ galeria.descripcion }}
+              </p></a
+            >
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

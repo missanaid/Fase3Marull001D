@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" class="container-bg">
+  <head>
+    {% block title%}
+    <title>Kyanime - Tu Página de Anime Favorita</title>
+    {% endblock %}
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Estilos -->
+    {% load static %}
+    
+
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} " />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #2e2e2e; font-size: 20px"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'anime' %}">
+          <img
+            class="img-fluid d-none d-lg-block"
+            src=" {% static 'img/logo.png' %}"
+            alt=""
+          />
+          <img
+            class="img-fluid d-lg-none"
+            src="{% static 'img/logo4.png' %}"
+            alt=""
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'anime' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'galeria' %}">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+            </li>
+            
+            {% if not request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login'%}">Acceder</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup'%}">Registro</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'anime'%}">Perfil</a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="{% url 'logout'%}">Salir</a>
+              </li>
+              {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <div class="col-12 text-white" style="background-color: rgb(28, 28, 29)">
+      <footer class="ocul-foot">
+        <div class="row text-white pt-4">
+          <div class="col-md-6">
+            <h4>Sobre Nosotros</h4>
+            <p>
+              Nuestros fans tienen un acceso al mejor catálogo de anime,
+              contando con información sobre éstos, imágenes, entre otros
+              teniendo la mejor experiencia viendo sus series favoritas.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h5>Menu</h5>
+            <p><a class="menu-footer" href="{% url 'anime' %}">Inicio</a></p>
+            <p>
+              <a class="menu-footer" href="{% url 'galeria' %}">Galería</a>
+            </p>
+            <p>
+              <a class="menu-footer" href="{% url 'contacto' %}">Contacto</a>
+            </p>
+            {% comment %}
+            <p>
+              <a class="menu-footer" href="{% url 'login' %}">Ingresar</a>
+            </p>
+            {% endcomment %}
+          </div>
+          <div class="col-md-3">
+            <h5>Redes Sociales</h5>
+            <div class="container align-content-center">
+              <div class="pt-3">
+                <a href="#" class="redes row col-1">
+                  <i
+                    style="color: #4267b2"
+                    class="fa fa-facebook-square fa-2x"
+                  ></i>
+                </a>
+                <a href="#" class="redes row col-1 pt-1"
+                  ><i
+                    style="color: #1da1f2"
+                    class="text-primary fa fa-twitter-square fa-2x"
+                  ></i
+                ></a>
+                <a href="#" class="redes row col-1 pt-1"
+                  ><i class="fa fa-github-square fa-2x"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr class="bg-white" style="width: 100%; text-align: left" />
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <p>Copyright © 2020 Todos los derechos reservados por Kyanime.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{% static 'js/jquery-3.5.1.min.js' %} "></script>
+    <script src="{% static 'js/jquery.marquee.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/galeria.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  </body>
+</html>

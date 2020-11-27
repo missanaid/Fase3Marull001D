@@ -1,0 +1,214 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+h1 {
+  padding-top: 10px;
+  padding-left: 30px;
+  font-size: 35px;
+}
+
+.main-menu {
+  float: center;
+  margin-right: 170px;
+}
+
+.main-menu ul {
+  list-style: none;
+}
+
+.main-menu ul li {
+  display: inline;
+}
+
+.main-menu ul li a {
+  font-size: 20px;
+  color: white;
+  float: left;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.main-menu ul li a:hover {
+  color: #ff7b00;
+}
+
+.nav-switch {
+  display: none;
+}
+.site-logo {
+  display: inline-block;
+  padding-top: 6px;
+}
+
+.user-panel {
+  font-size: 15px;
+  color: white;
+  float: right;
+  background: #ff6720;
+  padding: 8px 28px;
+  border-radius: 30px;
+}
+.header-section {
+  clear: both;
+  overflow: hidden;
+  padding: 18px 0;
+  border-bottom: 1px solid #ff7300;
+  background: rgb(63, 63, 63);
+}
+
+.user-panel a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+.user-panel a:hover {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+/* Noticias  */
+
+.latest-news-section {
+  overflow: hidden;
+  display: block;
+  clear: both;
+  background: #131313;
+  padding: 25px 0;
+  position: relative;
+  margin-top: -10px;
+  font-size: 15px;
+}
+
+.ln-title {
+  position: absolute;
+  height: 100%;
+  width: 33%;
+  left: 0;
+  top: 0;
+  text-align: right;
+  padding-top: 24px;
+  padding-right: 50px;
+  padding-left: 10px;
+  font-size: 20px;
+  color: #fff;
+  background: #ff5b0ff5;
+  z-index: 1;
+}
+
+.news-ticker {
+  width: 67%;
+  float: right;
+  overflow: hidden;
+}
+
+.news-ticker-contant .nt-item {
+  margin-right: 35px;
+  color: #fff;
+  display: inline-block;
+}
+
+.news-ticker-contant .nt-item span {
+  margin-right: 35px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  padding: 4px 20px;
+}
+
+.news-ticker-contant .nt-item span.new {
+  background: #ffe600;
+  color: #131313;
+}
+
+.news-ticker-contant .nt-item span.strategy {
+  background: #66ff00;
+  color: #131313;
+}
+
+.news-ticker-contant .nt-item span.racing {
+  background: #fc4b45;
+  color: black;
+}
+
+/* video */
+.video {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.container-bg {
+  background-color: black;
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+.card p {
+  color: black;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.card a:hover {
+  text-decoration: none;
+}
+.card p:hover {
+  color: #ff6720;
+}
+#arriba {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* Footer */
+
+.menu-footer {
+  color: #fff;
+}
+.menu-footer:hover {
+  color: rgb(255, 81, 0);
+}
+footer h5,
+footer h4 {
+  color: #ff5e00;
+}
+.redes {
+  color: inherit;
+  text-decoration: none;
+}
+.redes:hover {
+  color: inherit;
+  font-size: 25px;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom:.5rem;
+
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}

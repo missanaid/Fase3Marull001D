@@ -1,0 +1,50 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/estilos.css' %}" />
+  </head>
+  <body>
+    <div class="container-bg text-white pt-4">
+      <div class="container">
+        <br /><br />
+        <h2 class="page-section-heading text-center">
+          Añadir Imágen a Galería
+        </h2>
+
+        <div class="row pb-4 pt-4">
+          <div class="col-md-4 col-sm-6 col-lg-4 col-xl-4 mx-auto">
+            <form method="POST" class="post-form" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="col-md-6 col-6">{{ form.as_p }}</div>
+
+              <button
+                type="submit"
+                class="save btn btn-anime"
+                style="float: right"
+              >
+                Guardar
+              </button>
+              <button
+                onClick="javascript:history.go(-1)"
+                class="btn btn-anime"
+                style="float: left"
+              >
+                Atrás
+              </button>
+            </form>
+            <br />
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle %}
+
+<style>
+#header{
+    background: #3F3F3F
+}
+.module h2, .module caption, .inline-group h2 {
+    background: #3F3F3F
+}
+a:link, a:visited {
+    color: #FF6D00
+}
+#user-tools{
+    color: #FF6D00
+}
+.colMS,
+.main > .content{
+  background-color: black;
+  background-image: url("../static/img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.dashboard .module table th, td{
+    background:rgba(0, 0, 0, 0.850);
+}
+
+.module h2, .module caption, .inline-group h2{
+    background:rgba(0, 0, 0, 0.931);
+}
+
+}
+h1{
+    color: white;
+}
+#content-related,
+#content-related h2
+{
+    background: rgba(0, 0, 0, 0.856);
+    color: white;
+}
+
+#content-related .module h2{
+    color: white;
+}
+#content-related h3{
+    color: white;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #FF6D00;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+html .login{
+    background: black;
+}
+.main{
+    color: white;
+}
+.main.shifted > #nav-sidebar{
+    background: black;
+}
+
+#changelist-form .results{
+    background: black;
+}
+.dashboard .module table th, td{
+    background: white
+}
+#content{
+    background: white
+}
+
+</style>
+
+{% endblock  %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{%static 'logo.png'%}" height="40px">
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

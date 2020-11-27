@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %} {% block content %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/estilos.css' %}" />
+  </head>
+  <body>
+    <div class="container-bg pt-5 pb-5">
+      <div class="container bg-white">
+        <div class="pt-4 text-center">
+          <h1>Estás seguro de borrar la Imagen?</h1>
+          <br />
+          <img
+            src="{{galeria.imagen.url}}"
+            class="img-rounded img-fluid"
+            alt="{{galeria.nombre_anime}}"
+          />
+          <h1>Anime: {{galeria.nombre_anime}}</h1>
+          <form action="" method="POST">
+            {% csrf_token %}
+
+            <a
+              href="{% url 'galeria-detail' galeria.pk %}"
+              class="btn btn-anime btn-xl"
+              style="float: left"
+              >Atras</a
+            >
+            <button
+              type="submit"
+              class="save btn btn-anime btn-xl"
+              style="float: right"
+            >
+              Borrar
+            </button>
+          </form>
+        </div>
+        <br /><br />
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base_generic.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/estilos.css' %}" />
+  </head>
+  <body>
+    <div class="container-bg text-white">
+      <div class="">
+        <div class="row">
+          <div class="col-md-4 col-6 pt-4 pb-4 container">
+            <br />
+            <h2>Contactanos</h2>
+            <br />
+            <p>Envíe su mensaje a continuación.</p>
+            <br />
+            <form name="mensaje" autocomplete="off">
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="message"> Mensaje:</label>
+                  <textarea
+                    class="form-control"
+                    type="textarea"
+                    id="message"
+                    name="message"
+                    maxlength="7000"
+                    rows="7"
+                  ></textarea>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label for="name"> Tu nombre</label>
+                  <input type="text" class="form-control" id="nom" name="nom" />
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="email"> Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                  />
+                </div>
+
+                <div class="form-group row pt-3">
+                  <div class="col-2 pl-0"></div>
+                  <div class="col-10">
+                    <button
+                      id="enviar"
+                      type="button"
+                      class="btn btn-anime text-white"
+                    >
+                      Enviar &rarr;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p style="">Muchas gracias por sus comentarios uwu.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById("enviar").addEventListener("click", Validacion);
+
+        function Validacion() {
+          nom = document.getElementById("nom").value;
+          email = document.getElementById("email").value;
+          message = document.getElementById("message").value;
+          document.getElementById("message").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("nom").value = "";
+
+          if (message == null || message.length == 0) {
+            alert('Error! Debe completar el campo "Mensaje"');
+            document.mensaje.message.focus();
+            document.getElementById("message").value = "";
+            return false;
+          }
+
+          if (nom == null || nom.length == 0 || /^\s+$/.test(nom)) {
+            alert("Error! Debe ingresar un nombre válido");
+            document.mensaje.nom.focus();
+            document.getElementById("nom").value = "";
+            return false;
+          }
+          if (email == null || email.length == 0) {
+            alert("Error! Debe ingresar un email válido");
+            document.mensaje.email.focus();
+            document.getElementById("email").value = "";
+            return false;
+          }
+          return alert("Su mensaje se ha enviado correctamente!");
+        }
+      </script>
+    </div>
+  </body>
+</html>
+{% endblock %}

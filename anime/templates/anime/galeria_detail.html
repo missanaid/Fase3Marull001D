@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %} {% block content %} {% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/estilos.css' %}" />
+  </head>
+  <body>
+    <div class="container-bg pt-5 pb-5">
+      <div class="container bg-white">
+        <div class="pt-4 text-center">
+          <img
+            src="{{galeria.imagen.url}}"
+            class="img-rounded img-fluid"
+            alt="{{galeria.nombre_anime}}"
+          />
+          <h1>{{galeria.nombre_anime}}</h1>
+          <p>{{galeria.descripcion}}</p>
+          <a
+            href="{% url 'galeria' %}"
+            class="btn btn-anime"
+            style="float: left"
+          >
+            Atrás
+          </a>
+          <a
+            href="{% url 'galeria_update' pk=galeria.pk %}"
+            class="btn btn-anime"
+            style="float: center"
+          >
+            Editar
+          </a>
+          <a
+            href="{% url 'galeria_delete' pk=galeria.pk %}"
+            class="btn btn-anime"
+            style="float: right"
+          >
+            Eliminar
+          </a>
+        </div>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

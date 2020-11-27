@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>Lista de Imagenes</h1>
+
+{% if galeria_list %}
+
+<ul>
+  {% for galeria in galeria_list %}
+  <li>
+    <a href="{{ galeria.get_absolute_url }}"> {{ galeria.nombre_anime }} </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p>No se ha agregado ninguna imagen</p>
+
+{% endif %} {% endblock %}
