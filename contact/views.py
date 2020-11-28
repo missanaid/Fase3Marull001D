@@ -17,8 +17,8 @@ def contacto(request):
             email = EmailMessage(
                 "Kyanime: Nuevo mensaje de Contacto owo",
                 "De {} <{}>\n\nEscribió:\n\n{}".format(name, email, content),
-                "no-contestar@inbox.mailtrap.io",
-                ["ariadna.marull@gmail.com"],
+                "kyanime.mail@gmail.com",
+                ["kyanime.mail@gmail.com"],
                 reply_to=[email]
             )
             try:

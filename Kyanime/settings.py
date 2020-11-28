@@ -131,7 +131,11 @@ LOGOUT_REDIRECT_URL = 'anime'
 
 # Email config
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '84cdbf2cf102a0'
-EMAIL_HOST_PASSWORD = '1bc6124e7d7941'
-EMAIL_PORT = '2525'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kyanime.mail@gmail.com'
+EMAIL_HOST_PASSWORD = 'jmxxuwczjutsgflb'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Kyanime <noreply@kyanime.com>'
