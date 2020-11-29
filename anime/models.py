@@ -25,9 +25,9 @@ class Galeria(models.Model):
 class Anime(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4,  editable=False)
-    nombre_anime = models.CharField(max_length=100)
+    nombre_anime = models.CharField(max_length=200)
     episodios = models.IntegerField(default=0)
-    sinopsis = models.TextField()
+    sinopsis = models.TextField(max_length=1000)
     imagen = models.ImageField(
         upload_to='anime/', null=True, blank=True)
     opening = models.CharField(max_length=200, null=True, blank=True)
